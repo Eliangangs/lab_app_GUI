@@ -11,15 +11,13 @@
 
 1.  Встановіть Streamlit:
     ```
-    pip install streamlit
-    pip install requests
-    pip install beautifulsoup4
-    pip install matplotlib
+    pip install streamlit requests beautifulsoup4 matplotlib
     ```
 2.  Запустіть `gui.py`:
     ```
     streamlit run gui.py
     ```
+3.  Або скористатись сатом `https://eliangangs-lab-app-gui-gui-3w0zkt.streamlit.app`:
 
 ## Використання
 У головному вікні виберіть лабораторну роботу зі списку, перегляньте її опис та запустіть.
