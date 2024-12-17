@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from collections import Counter
-from urllib.parse import urlparse
+import streamlit as st
 
 def get_page_content(url):
     """Завантажує HTML-код сторінки за допомогою requests."""
@@ -43,21 +43,30 @@ def analyze_news_page(url):
     tag_counts = count_html_tags(soup)
    
     link_count, image_count = count_links_and_images(soup)
-   
-    print(f"Частота появи слів на сторінці '{url}':")
+    
+    st.write(f"Частота появи слів на сторінці '{url}':")
     for word, count in word_counts.most_common(10):
-        print(f"{word}: {count}")
+       st.write(f"{word}: {count}")
    
-    print("\nЧастота використання HTML-тегів:")
+    st.write("\nЧастота використання HTML-тегів:")
     for tag, count in tag_counts.most_common(10):
-        print(f"{tag}: {count}")
+      st.write(f"{tag}: {count}")
    
-    print(f"\nКількість посилань: {link_count}")
-    print(f"Кількість зображень: {image_count}")
+    st.write(f"\nКількість посилань: {link_count}")
+    st.write(f"Кількість зображень: {image_count}")
+
 
 def run_lab6():
-    url = "https://uk.wikipedia.org/wiki/Головна_сторінка"  # Замініть на реальний URL
-    analyze_news_page(url)
+    st.subheader("Лабораторна робота 6")
+    st.markdown("Веб-скрейпінг: аналіз HTML-коду сторінки.")
+
+    url = st.text_input("Введіть URL для аналізу:", key="url6", value="https://uk.wikipedia.org/wiki/Головна_сторінка")
+    
+    if st.button("Аналізувати сторінку", key="analyze6"):
+          try:
+               analyze_news_page(url)
+          except Exception as e:
+               st.error(f"Помилка аналізу сторінки: {e}")
 
 if __name__ == '__main__':
-    run_lab6()
+   run_lab6()

@@ -1,3 +1,5 @@
+import streamlit as st
+
 def find_subsequence(lst, subseq):
 
     n = len(lst)
@@ -10,13 +12,23 @@ def find_subsequence(lst, subseq):
     return False
 
 def run_lab2():
-    lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    subseq = [4, 5, 6]
+    st.subheader("Лабораторна робота 2")
+    st.markdown("Пошук підпослідовності у списку.")
+    
+    list_input = st.text_input("Введіть список чисел через пробіл, наприклад: 1 2 3 4 5", key="list_input2", value='1 2 3 4 5 6 7 8 9')
+    subseq_input = st.text_input("Введіть підпослідовність через пробіл, наприклад: 4 5 6", key="subseq_input2", value='4 5 6')
+    
+    if st.button("Перевірити", key="check_subseq2"):
+      try:
+          lst = list(map(int, list_input.split()))
+          subseq = list(map(int, subseq_input.split()))
 
-    if find_subsequence(lst, subseq):
-        print("Послідовність знайдена!")
-    else:
-        print("Послідовність не знайдена.")
+          if find_subsequence(lst, subseq):
+             st.success("Послідовність знайдена!")
+          else:
+              st.error("Послідовність не знайдена.")
+      except ValueError:
+           st.error("Введені дані повинні бути числами")
 
 if __name__ == '__main__':
     run_lab2()
