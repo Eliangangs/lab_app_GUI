@@ -7,7 +7,8 @@ st.title("Лабораторні роботи")
 
 labs_dir = "labs"
 lab_dirs = [d for d in os.listdir(labs_dir) if os.path.isdir(os.path.join(labs_dir, d))]
-
+lab_dirs = sorted(lab_dirs)
+# lab_dirs = sorted(lab_dirs, key=lambda x: int(x.replace("lab", "")))
 selected_lab = st.selectbox("Оберіть лабораторну роботу:", lab_dirs, key="lab_selector")
 
 if selected_lab:
