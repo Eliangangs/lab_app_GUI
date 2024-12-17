@@ -57,7 +57,6 @@ def analyze_news_page(url):
 
 
 def run_lab6():
-    st.subheader("Лабораторна робота 6")
     st.markdown("Веб-скрейпінг: аналіз HTML-коду сторінки.")
 
     url = st.text_input("Введіть URL для аналізу:", key="url6", value="https://uk.wikipedia.org/wiki/Головна_сторінка")

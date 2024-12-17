@@ -13,7 +13,6 @@ class MyString(str):
         return normalized_str == normalized_str[::-1]
 
 def run_lab5():
-    st.subheader("Лабораторна робота 5")
     st.markdown("Створення класу MyString з методами для перевірки повторюваних послідовностей та паліндромності.")
 
     input_string = st.text_input("Введіть рядок:", key="input_string5", value='AbaCba')

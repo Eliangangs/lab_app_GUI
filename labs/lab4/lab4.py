@@ -23,7 +23,6 @@ def find_repeated_sequences(text, min_words=3, min_repeats=5):
     return repeated_sequences
 
 def run_lab4():
-    st.subheader("Лабораторна робота 4")
     text = st.text_area("Введіть текст для аналізу:", key="text_lab4")
     min_words = st.number_input("Введіть мінімальну кількість слів у послідовності:", min_value=1, value=3, step=1, key="min_words_lab4")
     min_repeats = st.number_input("Введіть мінімальну кількість повторів послідовності:", min_value=1, value=5, step=1, key="min_repeats_lab4")

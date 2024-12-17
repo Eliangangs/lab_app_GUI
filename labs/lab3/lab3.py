@@ -51,7 +51,6 @@ def sort_by_score(filename):
 
 
 def run_lab3():
-    st.subheader("Лабораторна робота 3")
     st.header("Створення файлу")
     group_name = st.text_input("Введіть назву групи:", "1", key="group_name_lab3")
     students_data_input = st.text_area("Введіть дані студентів у форматі 'Ім'я,Середній бал', кожен студент з нового рядка:", key="students_data_lab3")

@@ -12,7 +12,6 @@ def find_subsequence(lst, subseq):
     return False
 
 def run_lab2():
-    st.subheader("Лабораторна робота 2")
     st.markdown("Пошук підпослідовності у списку.")
     
     list_input = st.text_input("Введіть список чисел через пробіл, наприклад: 1 2 3 4 5", key="list_input2", value='1 2 3 4 5 6 7 8 9')

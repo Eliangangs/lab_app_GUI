@@ -60,7 +60,6 @@ def task_3_ui():
         st.pyplot(fig)
 
 def run_lab7():
-    st.subheader("Лабораторна робота 7")
     task_1_ui()
     task_2_ui()
     task_3_ui()

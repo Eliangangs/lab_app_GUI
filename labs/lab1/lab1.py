@@ -4,7 +4,6 @@ import math
 
 # Завдання 1
 def task_1_ui():
-    st.subheader("Лабораторна робота 1")
     st.subheader("Завдання 1")
     st.markdown("Обчислення значення виразу: z = (sqrt(2) - sqrt(3n)) / (2m)")
     n = st.number_input("Введіть значення n:", key="n1", step=1.0, value=0.0)
